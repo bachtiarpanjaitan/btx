@@ -1,0 +1,23 @@
+{
+    "name": "btx/btx",
+    "description": "a common package for laravel framework",
+    "type": "metapackage",
+    "require": {
+        "intervention/image": "^2.7"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Btx\\QueryFilter\\": "btx/query/src",
+            "Btx\\File\\": "btx/file/src",
+            "Btx\\Http\\": "btx/http/src"
+        }
+    },
+    "authors": [
+        {
+            "name": "bachtiarpanjaitan",
+            "email": "bachtiarpanjaitan0@gmail.com"
+        }
+    ],
+    "minimum-stability": "RC"
+}
