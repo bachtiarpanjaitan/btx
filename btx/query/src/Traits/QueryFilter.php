@@ -1,8 +1,8 @@
 <?php
-namespace Btx\QueryFilter\Traits;
+namespace Btx\Query\Traits;
 
 use Illuminate\Database\Eloquent\Builder as eloBuilder;
-use Btx\QueryFilter\Statics\Operator;
+use Btx\Query\Statics\Operator;
 
 /**
  * Description of Query Filter Trait

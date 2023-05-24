@@ -1,5 +1,5 @@
 <?php
-namespace Btx\QueryFilter\Statics;
+namespace Btx\Query\Statics;
 
 /**
  * Description of Operator Constant

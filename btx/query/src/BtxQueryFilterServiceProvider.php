@@ -1,6 +1,6 @@
 <?php
 
-namespace Btx\QueryFilter;
+namespace Btx\Query;
 
 use Illuminate\Support\ServiceProvider;
 
