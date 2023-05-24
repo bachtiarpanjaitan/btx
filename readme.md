@@ -30,6 +30,7 @@ Add this line autoload.psr-4 in your composer.json
 
 ```
 Register Service Provider into List of Service Provider.
+
 _lumen_
 ```
 $app->register(Btx\Query\BtxQueryFilterServiceProvider::class);
