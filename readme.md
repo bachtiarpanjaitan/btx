@@ -31,7 +31,7 @@ Add this line autoload.psr-4 in your composer.json
 ```
 Register Service Provider into List of Service Provider.
 
-_lumen_
+_lumen_ bootstrap/app.php
 ```
 $app->register(Btx\Query\BtxQueryFilterServiceProvider::class);
 $app->register(Btx\Common\BtxCommonServiceProvider::class);
