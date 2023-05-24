@@ -6,11 +6,11 @@ Download repo and extract into your {root project}/packages folder.
 ```
 ├── app
 ├── config
-├── index.js
 ├── database
 ├── resources
 └── packages
     ├── btx
+    ...
 ```
 Add this line autoload.psr-4 in your composer.json
 
