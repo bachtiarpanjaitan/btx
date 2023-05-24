@@ -18,38 +18,6 @@ trait QueryFilter {
     public function setDefaultLimit(int $limit) {
         $this->_defaultLimit = $limit;
     }
-    
-    /**
-     * limiter record for model
-     * @param Illuminate\Database\Eloquent\Builder $model
-     * @param int $defaultLimit
-     * @return Illuminate\Database\Eloquent\Builder
-     */
-    public function limiter(eloBuilder &$model, int $defaultLimit = 10) {
-        $this->_init();
-        $page = (int) $this->_request['_page'];
-        $limit = (int) $this->_request['_limit'];
-        if(!empty($defaultLimit)) $limit = $defaultLimit;
-        
-        if ($limit == -1) {
-            return $model;
-        }
-        
-        if (!empty($this->_defaultLimit)) {
-            $limit = $this->_defaultLimit;
-        } elseif (empty($limit)) {
-            $limit = $defaultLimit;
-        }
-        
-        if ($page > 1) {
-            $skip = ($page - 1) * $limit;
-        } else {
-            $skip = 0;
-        }
-        
-        return $model->skip($skip)->take($limit);
-        
-    }
 
     /**
      * filter record of model using parameter request
@@ -117,18 +85,23 @@ trait QueryFilter {
         $op = $params['operator'];
         $filter = $params['filter'];
         if(count($tables) > 0) {
-            $model->whereHas($tables[0], function($query) use ($column,$value,$tables,$op,$filter) {
-                if(isset($tables[1])){
-                    $query->whereHas($tables[1], function($query) use ($column,$value,$tables,$op,$filter) {
-                        if(isset($tables[2])){
-                            $query->whereHas($tables[2], function($query) use ($column,$value,$op,$filter) {
-                                $this->_generator($query,$column,$value,$op,$filter);
-                            });
-                        } else $this->_generator($query,$column,$value,$op,$filter);
-                    });
-                } else $this->_generator($query,$column,$value,$op,$filter);
-            });
+            foreach ($tables as $table) {
+                $this->_calculateRelation($model,$table,[
+                    'column' => $column,
+                    'value' => $value,
+                    'op' => $op,
+                    'filter' => $filter
+                ]);
+            }
         } else $this->_generator($model,$column,$value,$op,$filter);
+    }
+
+    private function _calculateRelation(&$query,$table, $attr){
+        if(isset($table)){
+            $query->whereHas($table, function($query) use ($attr) {
+                $this->_generator($query,$attr['column'],$attr['value'],$attr['op'],$attr['filter']);
+            });
+        } else  $this->_generator($query,$attr['column'],$attr['value'],$attr['op'],$attr['filter']);
     }
 
     /**

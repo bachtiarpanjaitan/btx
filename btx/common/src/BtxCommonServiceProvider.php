@@ -1,10 +1,10 @@
 <?php
 
-namespace Btx\Http;
+namespace Btx\Common;
 
 use Illuminate\Support\ServiceProvider;
 
-class BtxHttpServiceProvider extends ServiceProvider
+class BtxCommonServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

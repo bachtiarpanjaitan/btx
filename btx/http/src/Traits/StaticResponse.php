@@ -8,7 +8,7 @@ use Btx\Http\Libraries\ApiResponse;
  * @author bachtiarpanjaitan <bahtiarpanjaitan0@gmail.com>
  * @since 
  */
-trait StaticResponseTrait {
+trait StaticResponse {
     
     /**
      * memberikan sebuah respon palsu guna hanya untuk testing response
@@ -29,6 +29,11 @@ trait StaticResponseTrait {
             ApiResponse::setAppendMessageDir($appendTextDir);
         }
         return ApiResponse::make(false, '', null);
+    }
+
+    public function response200(string $appendText = '',$data = null, $appendData = null){
+        if(!empty($appendData)) ApiResponse::setIncludeData($appendData);
+        return ApiResponse::make(true, $appendText, $data);
     }
     
     /**

@@ -10,7 +10,7 @@ use Intervention\Image\ImageManager;
  * @author bachtiarpanjaitan <bahtiarpanjaitan0@gmail.com>
  * @since 
  */
-trait UploadTrait {
+trait Upload {
      /**
      * @author bachtiarpanjaitan <bachtiarpanjaitan0@gmail.com>
      * @param $req Illuminate\Http\Request;
@@ -23,7 +23,7 @@ trait UploadTrait {
      *  - rules: string - Laravel validation format
      * @return array Image Attributes
      */
-    public function UploadImage(Request $req,array $options){
+    public function uploadImage(Request $req,array $options){
         $imageProp = [];
         $_imageValidationRules = isset($options['rules'])? $options['rules']:'image|mimes:jpg,png,jpeg,svg|max:1024';
         $_avatarSize = isset($options['size'])? $options['size']:[300,300];
@@ -40,8 +40,7 @@ trait UploadTrait {
             if (!file_exists($_avatarPath)) {
                 mkdir($_avatarPath, $permission, true);
             }
-            // $objImage = Image::make($image->path());
-            // $objImage->resize($_avatarSize[0], $_avatarSize[1])->save($_avatarPath.'/'. $imageProp['filename']);
+
             $manager = new ImageManager(['driver' => 'gd']);
             $objImage = $manager->make($image->path());
             $objImage->resize($_avatarSize[0],null,function ($constraint) {
@@ -64,7 +63,7 @@ trait UploadTrait {
      *  - permission: string - set permission folder of destination path, default: 777,
      * @return array Image Attributes
      */
-    public function UploadFile(Request $request, array $options){
+    public function uploadFile(Request $request, array $options){
         $fileProp = [];
         $path = $options['path'];
         $permission = isset($options['permission'])? $options['permission']: '777';
