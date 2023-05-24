@@ -8,9 +8,10 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Btx\\QueryFilter\\": "btx/query/src",
+            "Btx\\Query\\": "btx/query/src",
             "Btx\\File\\": "btx/file/src",
-            "Btx\\Http\\": "btx/http/src"
+            "Btx\\Http\\": "btx/http/src",
+            "Btx\\Common\\": "btx/common/src"
         }
     },
     "authors": [
