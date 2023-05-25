@@ -1,7 +1,7 @@
 {
     "name": "btx/btx",
-    "description": "a common package for laravel framework",
-    "type": "metapackage",
+    "description": "Additional package for laravel framework",
+    "type": "library",
     "require": {
         "intervention/image": "^2.7"
     },
@@ -17,8 +17,11 @@
     "authors": [
         {
             "name": "bachtiarpanjaitan",
-            "email": "bachtiarpanjaitan0@gmail.com"
+            "email": "bachtiarpanjaitan0@gmail.com",
+            "homepage": "https://bataxdev.com",
+            "role": "Author"
         }
     ],
-    "minimum-stability": "RC"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
