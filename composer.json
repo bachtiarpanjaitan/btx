@@ -1,7 +1,8 @@
 {
     "name": "btx/btx",
-    "description": "Additional package for laravel framework",
+    "description": "Genereal additional package for laravel framework",
     "type": "library",
+    "keywords": ["bataxdev", "btx","bachtiarpanjaitan"],
     "require": {
         "php": ">= 7.4.0",
         "intervention/image": "^2.7"
@@ -15,6 +16,9 @@
             "Btx\\Common\\": "common/src"
         }
     },
+    "suggest": {
+        "ext-gd": "to use GD library based image processing."
+    },
     "authors": [
         {
             "name": "bachtiarpanjaitan",
@@ -23,6 +27,22 @@
             "role": "Author"
         }
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Btx\\Query",
+                "Btx\\Http",
+                "Btx\\File",
+                "Btx\\Common"
+            ],
+            "aliases": {
+                "BtxQuery": "Btx\\Query",
+                "BtxFile": "Btx\\File",
+                "BtxHttp": "Btx\\Http",
+                "BtxCommon": "Btx\\Common"
+            }
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
