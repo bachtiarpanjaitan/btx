@@ -8,7 +8,14 @@
 * Laravel
 * Lumen
 #### Instalation
-**Manual Instalation**
+
+**Install using Composer**
+
+Run command <code>composer require btx/btx</code>, then <code>composer dump-autoload</code>
+
+
+
+**Install Manual**
 Download repo and extract into your {root project}/packages folder.
 ```
 ├── app
