@@ -16,6 +16,7 @@ Run command <code>composer require btx/btx</code>, then <code>composer dump-auto
 
 
 **Install Manual**
+
 Download repo and extract into your {root project}/packages folder.
 ```
 ├── app
