@@ -68,6 +68,8 @@ trait QueryFilter {
             }
         }
         if($withLimit) $model->skip($skip)->take($limit);
+
+        // dd($model->toSql());
        return $model;
     }
 
@@ -80,48 +82,43 @@ trait QueryFilter {
      */
     private function _generateQuery(&$model, $params){
         $tables = $params['table'];
-        $column = $params['column'];
-        $value = $params['value'];
-        $op = $params['operator'];
-        $filter = $params['filter'];
-        if(count($tables) > 0) {
-            foreach ($tables as $table) {
-                $this->_calculateRelation($model,$table,[
-                    'column' => $column,
-                    'value' => $value,
-                    'op' => $op,
-                    'filter' => $filter
-                ]);
-            }
-        } else $this->_generator($model,$column,$value,$op,$filter);
-    }
-
-    private function _calculateRelation(&$query,$table, $attr){
-        if(isset($table)){
-            $query->whereHas($table, function($query) use ($attr) {
-                $this->_generator($query,$attr['column'],$attr['value'],$attr['op'],$attr['filter']);
+        
+        $queryBuilder = function($query) use ($params) {
+            if (isset($tables[2])) {
+                $query->whereHas($tables[2], function($query) use ($params) {
+                    $this->_generator($query, $params);
+                });
+            } else  $this->_generator($query, $params);
+        };
+        
+        if (count($tables) > 0) {
+            $model->whereHas($tables[0], function($query) use ($tables,$queryBuilder) {
+                if (isset($tables[1])) {
+                    $query->whereHas($tables[1], function($query) use ($queryBuilder) {
+                        $queryBuilder($query);
+                    });
+                } else {
+                    $queryBuilder($query);
+                }
             });
-        } else  $this->_generator($query,$attr['column'],$attr['value'],$attr['op'],$attr['filter']);
-    }
+        } else {
+            $queryBuilder($model);
+        }
+    }    
 
     /**
      * Generate query
      */
-    private function _generator(&$query,$column,$value,$op,$filter){
-        if(in_array($filter,['in','notin','between'])){
-            $_values = explode(',',$value);
-            if(count($_values) == 2) $query->{$op['q']}($column, $_values);
+    private function _generator(&$query,$params){
+        if(in_array($params['filter'],['in','notin','between'])){
+            $_values = explode(',',$params['value']);
+            if(count($_values) == 2) $query->{$params['op']['q']}($params['column'], $_values);
         }
-        elseif(in_array($filter,['null','notnull'])){
-            $query->{$op['q']}($column);
-        }
-        elseif(empty($value) && $value != 0) 
-            $query->{$op['q']}($column);
-        elseif(isset($op['a']) && isset($op['s']) && isset($op['q']))
-            $query->{$op['q']}($column,$op['s'],$op['a'].$value.$op['a']);
-        elseif (isset($op['s']) && isset($op['q']))
-            $query->{$op['q']}($column,$op['s'],$value);
-        elseif (!isset($op['s']) && isset($op['q'])) $query->{$op['q']}($column,$value);
+        elseif(in_array($params['filter'],['null','notnull'])) $query->{$params['op']['q']}($params['column']);
+        elseif(empty($value) && $params['value'] != 0)  $query->{$params['op']['q']}($params['column']);
+        elseif(isset($params['op']['a']) && isset($params['op']['s']) && isset($params['op']['q'])) $query->{$params['op']['q']}($params['column'],$params['op']['s'],$params['op']['a'].$params['value'].$params['op']['a']);
+        elseif (isset($params['op']['s']) && isset($params['op']['q'])) $query->{$params['op']['q']}($params['column'],$params['op']['s'],$params['value']);
+        elseif (!isset($params['op']['s']) && isset($params['op']['q'])) $query->{$params['op']['q']}($params['column'],$params['value']);
     }
 
     private function _init(){

@@ -1,5 +1,12 @@
 #### A Common Fiture Package for Laravel Framework
 
+#### Requirements
+* PHP Version : 7.4+
+* PHP Modules : GD
+
+#### Tested On
+* Laravel
+* Lumen
 #### Instalation
 **Manual Instalation**
 Download repo and extract into your {root project}/packages folder.
@@ -12,7 +19,7 @@ Download repo and extract into your {root project}/packages folder.
     ├── btx
     ...
 ```
-Add this line autoload.psr-4 in your composer.json
+Add this line autoload.psr-4 in your composer.json (You can choose one or all of them)
 
 ```
 "autoload": {
@@ -40,14 +47,16 @@ $app->register(Btx\File\BtxHttpServiceProvider::class);
 ```
 _laravel_ config/app.php
 ```
-'providers' => ServiceProvider::defaultProviders()->merge([
+'providers' => [
     // Other Service Providers
  
     Btx\Query\BtxQueryFilterServiceProvider::class,
     Btx\Common\BtxCommonServiceProvider::class,
     Btx\File\BtxCommonServiceProvider::class,
     Btx\File\BtxHttpServiceProvider::class
-])->toArray(),
+],
 ```
-then, dump autoload using command <code>composer dump-autoload</code>
+then, dump autoload using command <code>composer dump-autoload</code>.
+
+See detail documentations on [Wiki](https://github.com/bachtiarpanjaitan/btx/wiki)
 
