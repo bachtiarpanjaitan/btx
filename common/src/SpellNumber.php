@@ -5,6 +5,10 @@ use Btx\Common\Spell\{
     Id
 };
 
+/**
+ * Spelling number into another language
+ * @author bachtiarpanjaitan <bachtiarpanjaitan0@gmail.com>
+ */
 class SpellNumber {
     private static $_spells = [
         'id' => Id::class
