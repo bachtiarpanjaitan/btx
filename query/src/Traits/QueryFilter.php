@@ -42,14 +42,13 @@ trait QueryFilter {
             $_filter_name = $_filter[count($_filter)-1];
             unset($_filter[count($_filter)-1]);
             $column = implode("_",$_filter);
-            // dd($_filter_name);
             $operators= Operator::$OPERATOR;
             if(isset($operators[$_filter_name])){
                 $params = [
                     'table' => $table,
                     'column' => $column,
                     'value' => $value,
-                    'operator' => $operators[$_filter_name],
+                    'op' => $operators[$_filter_name],
                     'filter' => $_filter_name
                 ];
                 $this->_generateQuery($model, $params);
@@ -82,29 +81,20 @@ trait QueryFilter {
      */
     private function _generateQuery(&$model, $params){
         $tables = $params['table'];
-        
-        $queryBuilder = function($query) use ($params) {
-            if (isset($tables[2])) {
-                $query->whereHas($tables[2], function($query) use ($params) {
-                    $this->_generator($query, $params);
-                });
-            } else  $this->_generator($query, $params);
-        };
-        
-        if (count($tables) > 0) {
-            $model->whereHas($tables[0], function($query) use ($tables,$queryBuilder) {
-                if (isset($tables[1])) {
-                    $query->whereHas($tables[1], function($query) use ($queryBuilder) {
-                        $queryBuilder($query);
+        if(count($tables) > 0) {
+            $model->whereHas($tables[0], function($query) use ($params) {
+                if(isset($tables[1])){
+                    $query->whereHas($tables[1], function($query) use ($params) {
+                        if(isset($tables[2])){
+                            $query->whereHas($tables[2], function($query) use ($params) {
+                                $this->_generator($query,$params);
+                            });
+                        } else $this->_generator($query,$params);
                     });
-                } else {
-                    $queryBuilder($query);
-                }
+                } else $this->_generator($query,$params);
             });
-        } else {
-            $queryBuilder($model);
-        }
-    }    
+        } else $this->_generator($model,$params);
+    }
 
     /**
      * Generate query
