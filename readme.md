@@ -50,8 +50,8 @@ _lumen_ bootstrap/app.php
 ```
 $app->register(Btx\Query\BtxQueryFilterServiceProvider::class);
 $app->register(Btx\Common\BtxCommonServiceProvider::class);
-$app->register(Btx\File\BtxCommonServiceProvider::class);
-$app->register(Btx\File\BtxHttpServiceProvider::class);
+$app->register(Btx\File\BtxFileServiceProvider::class);
+$app->register(Btx\Http\BtxHttpServiceProvider::class);
 ```
 _laravel_ config/app.php
 ```
@@ -60,8 +60,8 @@ _laravel_ config/app.php
  
     Btx\Query\BtxQueryFilterServiceProvider::class,
     Btx\Common\BtxCommonServiceProvider::class,
-    Btx\File\BtxCommonServiceProvider::class,
-    Btx\File\BtxHttpServiceProvider::class
+    Btx\File\BtxFileServiceProvider::class,
+    Btx\Http\BtxHttpServiceProvider::class
 ],
 ```
 then, dump autoload using command <code>composer dump-autoload</code>.
