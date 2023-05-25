@@ -1,7 +1,7 @@
 <?php
-namespace Btx\Common\Traits;
+namespace Btx\Common\Spell;
 
-trait Terbilang {
+class Id {
     private $_bilangan = [" ", " Satu", " Dua", " Tiga", " Empat", " Lima",
     " Enam", " Tujuh", " Delapan", " Sembilan", " Sepuluh", " Sebelas"];
 
@@ -12,8 +12,8 @@ trait Terbilang {
      * Convert integer,double,float into string spelling based on Indonesian
      * @return string
      */
-	public function terbilang($val){
-		return trim($this->convert($val));
+	public function generate($val){
+		return trim(self::convert($val));
 	}
 
     private function convert($value){

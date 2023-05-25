@@ -4,7 +4,7 @@ namespace Btx\Http\Traits;
 use Btx\Http\Libraries\ApiResponse;
 
 /**
- * Description of UploadTrait
+ * Description of Static Response
  * @author bachtiarpanjaitan <bahtiarpanjaitan0@gmail.com>
  * @since 
  */
