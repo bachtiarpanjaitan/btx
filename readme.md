@@ -25,10 +25,10 @@ Add this line autoload.psr-4 in your composer.json (You can choose one or all of
 "autoload": {
     "psr-4": {
         ...
-        "Btx\\Query\\":"packages/btx/btx/query/src/",
-        "Btx\\Common\\":"packages/btx/btx/common/src/",
-        "Btx\\Http\\":"packages/btx/btx/http/src/",
-        "Btx\\File\\":"packages/btx/btx/file/src/"
+        "Btx\\Query\\":"packages/btx/query/src/",
+        "Btx\\Common\\":"packages/btx/common/src/",
+        "Btx\\Http\\":"packages/btx/http/src/",
+        "Btx\\File\\":"packages/btx/file/src/"
     },
     "files": [
         ...
