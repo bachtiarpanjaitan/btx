@@ -1,6 +1,6 @@
 {
     "name": "btx/btx",
-    "description": "Genereal additional package for laravel framework",
+    "description": "General additional package for laravel framework",
     "type": "library",
     "keywords": ["bataxdev", "btx","bachtiarpanjaitan"],
     "require": {
