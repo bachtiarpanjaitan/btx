@@ -1,5 +1,5 @@
 <?php
-namespace Btx\Common\Spell;
+namespace Btx\Common\Spells;
 
 class Id {
     private $_bilangan = [" ", " Satu", " Dua", " Tiga", " Empat", " Lima",

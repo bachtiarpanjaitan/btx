@@ -1,7 +1,7 @@
 <?php
 
 namespace Btx\Common;
-use Btx\Common\Spell\{
+use Btx\Common\Spells\{
     Id
 };
 

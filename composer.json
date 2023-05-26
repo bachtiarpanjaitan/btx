@@ -5,7 +5,9 @@
     "keywords": ["bataxdev", "btx","bachtiarpanjaitan","spellnumber"],
     "require": {
         "php": ">= 7.4.0",
-        "intervention/image": "^2.7"
+        "intervention/image": "^2.7",
+        "league/fractal": "^0.19.2",
+        "spatie/laravel-fractal": "^5.8"
     },
     "license": "MIT",
     "autoload": {
@@ -14,7 +16,10 @@
             "Btx\\File\\": "file/src",
             "Btx\\Http\\": "http/src",
             "Btx\\Common\\": "common/src"
-        }
+        },
+        "files": [
+            "helpers/lumen.php"
+        ]
     },
     "suggest": {
         "ext-gd": "to use GD library based image processing."
@@ -23,7 +28,7 @@
         {
             "name": "bachtiarpanjaitan",
             "email": "bachtiarpanjaitan0@gmail.com",
-            "homepage": "https://bataxdev.com",
+            "homepage": "https://bataxdev.com/about",
             "role": "Author"
         }
     ],
