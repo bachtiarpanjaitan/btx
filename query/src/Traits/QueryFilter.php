@@ -105,7 +105,7 @@ trait QueryFilter {
             if(count($_values) == 2) $query->{$params['op']['q']}($params['column'], $_values);
         }
         elseif(in_array($params['filter'],['null','notnull'])) $query->{$params['op']['q']}($params['column']);
-        elseif(empty($value) && $params['value'] != 0)  $query->{$params['op']['q']}($params['column']);
+        elseif(empty($params['value']) && $params['value'] != 0)  $query->{$params['op']['q']}($params['column']);
         elseif(isset($params['op']['a']) && isset($params['op']['s']) && isset($params['op']['q'])) $query->{$params['op']['q']}($params['column'],$params['op']['s'],$params['op']['a'].$params['value'].$params['op']['a']);
         elseif (isset($params['op']['s']) && isset($params['op']['q'])) $query->{$params['op']['q']}($params['column'],$params['op']['s'],$params['value']);
         elseif (!isset($params['op']['s']) && isset($params['op']['q'])) $query->{$params['op']['q']}($params['column'],$params['value']);
