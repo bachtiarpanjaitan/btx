@@ -70,6 +70,19 @@ trait StaticResponse {
         }
         return ApiResponse::make(false, '', null);
     }
+
+     /**
+     * memberikan status default 405 (method not allowed)
+     * @return array
+     */
+    public function response405(string $appendText = '', string $appendTextDir = '') {
+        ApiResponse::setStatusCode(405);
+        ApiResponse::setAppendMessage($appendText);
+        if (!empty($appendTextDir)) {
+            ApiResponse::setAppendMessageDir($appendTextDir);
+        }
+        return ApiResponse::make(false, '', null);
+    }
     
     /**
      * memberikan status default 500 (error disisi server)
