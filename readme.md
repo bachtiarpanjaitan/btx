@@ -1,12 +1,12 @@
 ## BTX
 
-[![Total Downloads](https://img.shields.io/packagist/dt/btx/btx?style=for-the-badge)](https://packagist.org/packages/btx/btx?)
-[![Latest Stable Version](https://img.shields.io/packagist/v/btx/btx?style=for-the-badge)](https://packagist.org/packages/btx/btx)
-[![License](https://img.shields.io/packagist/l/btx/btx?style=for-the-badge)](https://packagist.org/packages/btx/btx)
-[![Dependencies](https://img.shields.io/librariesio/github/bachtiarpanjaitan/btx?style=for-the-badge)](https://packagist.org/packages/btx/btx)
-[![Stars](https://img.shields.io/packagist/stars/btx/btx?style=for-the-badge)](https://packagist.org/packages/btx/btx)
-[![Social](https://img.shields.io/github/stars/btx?style=for-the-badge)](https://github.com/bachtiarpanjaitan/btx)
-[![Social](https://img.shields.io/github/last-commit/bachtiarpanjaitan/btx/main?style=for-the-badge)](https://github.com/bachtiarpanjaitan/btx)
+[![Total Downloads](https://img.shields.io/packagist/dt/btx/btx?style=flat-square)](https://packagist.org/packages/btx/btx?)
+[![Latest Stable Version](https://img.shields.io/packagist/v/btx/btx?style=flat-square)](https://packagist.org/packages/btx/btx)
+[![License](https://img.shields.io/packagist/l/btx/btx?style=flat-square)](https://packagist.org/packages/btx/btx)
+[![Dependencies](https://img.shields.io/librariesio/github/bachtiarpanjaitan/btx?style=flat-square)](https://packagist.org/packages/btx/btx)
+[![Stars](https://img.shields.io/packagist/stars/btx/btx?style=flat-square)](https://packagist.org/packages/btx/btx)
+[![Social](https://img.shields.io/github/stars/btx?style=flat-square)](https://github.com/bachtiarpanjaitan/btx)
+[![Social](https://img.shields.io/github/last-commit/bachtiarpanjaitan/btx/main?style=flat-square)](https://github.com/bachtiarpanjaitan/btx)
 
 
 #### Requirements
