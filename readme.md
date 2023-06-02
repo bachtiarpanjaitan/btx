@@ -1,11 +1,19 @@
-#### A Common Fiture Package for Laravel Framework
+## BTX
+
+[![Total Downloads](https://img.shields.io/packagist/dt/btx/btx)](https://packagist.org/packages/btx/btx)
+[![Latest Stable Version](https://img.shields.io/packagist/v/btx/btx)](https://packagist.org/packages/btx/btx)
+[![License](https://img.shields.io/packagist/l/btx/btx)](https://packagist.org/packages/btx/btx)
+[![Dependencies](https://img.shields.io/librariesio/github/bachtiarpanjaitan/btx)](https://packagist.org/packages/btx/btx)
+[![Stars](https://img.shields.io/packagist/stars/btx/btx)](https://packagist.org/packages/btx/btx)
+[![Social](https://img.shields.io/github/stars/btx?style=social)](https://github.com/bachtiarpanjaitan/btx)
+[![Social](https://img.shields.io/github/last-commit/bachtiarpanjaitan/btx/main)](https://github.com/bachtiarpanjaitan/btx)
+
 
 #### Requirements
 * PHP Version : 7.4+
 * PHP Modules : GD
 
 #### Tested On
-* Laravel
 * Lumen
 #### Instalation
 
