@@ -1,10 +1,14 @@
 ## BTX
+<p align="center"><a href="https://bataxdev.com/projects/btx-btx" target="_blank"><img src="https://api.bataxdev.com/uploads/btx_packagist_18b5e6f8b1.png" width="400" alt="Btx Packagist Logo"></a></p>
 
-[![Total Downloads](https://img.shields.io/packagist/dt/btx/btx?style=flat-square)](https://packagist.org/packages/btx/btx?)
-[![Latest Stable Version](https://img.shields.io/packagist/v/btx/btx?style=flat-square)](https://packagist.org/packages/btx/btx)
-[![License](https://img.shields.io/packagist/l/btx/btx?style=flat-square)](https://packagist.org/packages/btx/btx)
-[![Dependencies](https://img.shields.io/librariesio/github/bachtiarpanjaitan/btx?style=flat-square)](https://packagist.org/packages/btx/btx)
-[![Last Commit](https://img.shields.io/github/last-commit/bachtiarpanjaitan/btx/main?style=flat-square)](https://github.com/bachtiarpanjaitan/btx)
+<p align="center">
+    <a href="https://packagist.org/packages/btx/btx?"><img src="https://img.shields.io/packagist/dt/btx/btx?style=flat-square" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/btx/btx"><img src="https://img.shields.io/packagist/v/btx/btx?style=flat-square" alt="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/btx/btx"><img src="https://img.shields.io/packagist/l/btx/btx?style=flat-square" alt="License"></a>
+    <a href="https://packagist.org/packages/btx/btx"><img src="https://img.shields.io/librariesio/github/bachtiarpanjaitan/btx?style=flat-square" alt="Dependencies"></a>
+    <a href="https://github.com/bachtiarpanjaitan/btx"><img src="https://img.shields.io/github/last-commit/bachtiarpanjaitan/btx/main?style=flat-square" alt="Last Commit"></a>
+</p>
+
 
 
 #### Requirements
