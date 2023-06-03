@@ -9,8 +9,6 @@
     <a href="https://github.com/bachtiarpanjaitan/btx"><img src="https://img.shields.io/github/last-commit/bachtiarpanjaitan/btx/main?style=flat-square" alt="Last Commit"></a>
 </p>
 
-
-
 #### Requirements
 * PHP Version : 7.4+
 * PHP Modules : GD
