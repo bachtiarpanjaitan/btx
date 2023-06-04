@@ -2,8 +2,8 @@
 namespace Btx\Common\Spells;
 
 class Id {
-    private $_bilangan = [" ", " Satu", " Dua", " Tiga", " Empat", " Lima",
-    " Enam", " Tujuh", " Delapan", " Sembilan", " Sepuluh", " Sebelas"];
+    private $_bilangan = [" ", " satu", " dua", " tiga", " empat", " lima",
+    " enam", " tujuh", " delapan", " sembilan", " sepuluh", " sebelas"];
 
 
 	/**
@@ -21,31 +21,31 @@ class Id {
 			return "". $this->_bilangan[(int)$value];
 		}
 		else if($value < 20){
-			return $this->convert($value - 10) . " Belas";
+			return $this->convert($value - 10) . " belas";
 		}
 		else if($value < 100){
-			return ($this->convert($value / 10) . " Puluh") .  $this->convert($value % 10); 
+			return ($this->convert($value / 10) . " puluh") .  $this->convert($value % 10); 
 		}
 		else if($value < 200 ){ 
 			return "Seratus" . $this->convert($value - 100);
 		}
 		else if($value < 1000){
-			return ($this->convert($value / 100) . " Ratus" ) . $this->convert($value % 100);
+			return ($this->convert($value / 100) . " ratus" ) . $this->convert($value % 100);
 		}
 		else if($value < 2000){
 			return "Seribu" . $this->convert($value - 1000);
 		}
 		else if($value < 1000000){
-			return ($this->convert($value /1000) . " Ribu") . $this->convert($value % 1000);
+			return ($this->convert($value /1000) . " ribu") . $this->convert($value % 1000);
 		}
 		else if($value < 1000000000){
-			return ($this->convert($value /1000000) . " Juta") . $this->convert($value % 1000000);
+			return ($this->convert($value /1000000) . " juta") . $this->convert($value % 1000000);
 		}
 		else if($value < (double) "1000000000000L"){
-			return ($this->convert($value /1000000000) . " Milyar") . $this->convert($value % 1000000000);
+			return ($this->convert($value /1000000000) . " milyar") . $this->convert($value % 1000000000);
 		}
 		else if($value < (double) "1000000000000000L"){
-			return ($this->convert($value / (double) "1000000000000L") . " Triliun") . $this->convert($value % (double) "1000000000000L");
+			return ($this->convert($value / (double) "1000000000000L") . " triliun") . $this->convert($value % (double) "1000000000000L");
 		}
 		return null;
     }

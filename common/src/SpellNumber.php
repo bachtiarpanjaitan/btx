@@ -2,7 +2,8 @@
 
 namespace Btx\Common;
 use Btx\Common\Spells\{
-    Id
+    Id,
+    En
 };
 
 /**
@@ -11,19 +12,21 @@ use Btx\Common\Spells\{
  */
 class SpellNumber {
     private static $_spells = [
-        'id' => Id::class
+        'id' => Id::class,
+        'en' => En::class
     ];
 
     /**
      * Spelling number into another language
      * Support Language:
      * - id : Indonesian
+     * - en : English
      * @param integer|double|float $number 
      * @param string $language
      * @author bachtiarpanjaitan <bachtiarpanjaitan0@gmail.com>
      */
     public static function generate($number, $language = 'id') : String{
         $class = new self::$_spells[strtolower($language)]();
-        return $class->generate((int) $number);
+        return $class->generate((double) $number);
     }
 }
