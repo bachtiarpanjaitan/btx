@@ -18,7 +18,7 @@ class Map {
      * [radius: 0, lat: 0.0, lng: 0.0]
      * 
      */
-    public static function onCoordinateRadius(array $needle, array $haystack) : bool{
+    public static function inCoordinateRadius(array $needle, array $haystack) : bool{
         $result = false;
         try {
             $radius = (int) $haystack['radius'];
