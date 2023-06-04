@@ -4,7 +4,7 @@ namespace Btx\Query;
 
 use Illuminate\Support\ServiceProvider;
 
-class BtxQueryFilterServiceProvider extends ServiceProvider
+class BtxQueryServiceProviderLaravel extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -13,9 +13,10 @@ class BtxQueryFilterServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // include __DIR__.'/Constants/Operator.php';
         $this->publishes([
-            __DIR__.'/config/btx.php' => config_path('btx.php'),
-        ], 'config');
+            __DIR__.'/../../config/btx.php' => config_path('btx.php'),
+        ], 'btx');
     }
 
     /**
@@ -25,6 +26,8 @@ class BtxQueryFilterServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom( __DIR__.'/config/btx.php', 'btx');
+        $app = $this->app;
+        $this->mergeConfigFrom( __DIR__.'/../../config/btx.php', 'btx');
+        $app->alias('BtxQuery', 'Btx\Query');
     }
 }

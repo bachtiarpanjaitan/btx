@@ -3,9 +3,20 @@
 namespace Btx\Common;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Lumen\Application as LumenApplication;
+use Illuminate\Foundation\Application as IlluminateApplication;
 
 class BtxCommonServiceProvider extends ServiceProvider
 {
+    protected $provider;
+
+    public function __construct($app)
+    {
+        parent::__construct($app);
+
+        $this->provider = $this->getProvider();
+    }
+
     /**
      * Bootstrap the application services.
      *
@@ -13,10 +24,9 @@ class BtxCommonServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // include __DIR__.'/Constants/Operator.php';
-        $this->publishes([
-            __DIR__.'/config/btx.php' => config_path('btx.php'),
-        ], 'config');
+        if (method_exists($this->provider, 'boot')) {
+            return $this->provider->boot();
+        }
     }
 
     /**
@@ -26,6 +36,22 @@ class BtxCommonServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom( __DIR__.'/config/btx.php', 'btx');
+        return $this->provider->register();
+    }
+
+    /**
+     * Return ServiceProvider according to Laravel version
+     *
+     * @return \Intervention\Image\Provider\ProviderInterface
+     */
+    private function getProvider()
+    {
+        if ($this->app instanceof LumenApplication) {
+            $provider = BtxCommonServiceProviderLumen::class;
+        } else {
+            $provider = BtxCommonServiceProviderLaravel::class;
+        }
+
+        return new $provider($this->app);
     }
 }

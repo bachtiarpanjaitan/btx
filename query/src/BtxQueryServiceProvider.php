@@ -1,12 +1,12 @@
 <?php
 
-namespace Btx\Http;
+namespace Btx\Query;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
 use Illuminate\Foundation\Application as IlluminateApplication;
 
-class BtxHttpServiceProvider extends ServiceProvider
+class BtxQueryServiceProvider extends ServiceProvider
 {
     protected $provider;
 
@@ -47,9 +47,9 @@ class BtxHttpServiceProvider extends ServiceProvider
     private function getProvider()
     {
         if ($this->app instanceof LumenApplication) {
-            $provider = BtxHttpServiceProviderLumen::class;
+            $provider = BtxQueryServiceProviderLumen::class;
         } else {
-            $provider = BtxHttpServiceProviderLaravel::class;
+            $provider = BtxQueryServiceProviderLaravel::class;
         }
 
         return new $provider($this->app);
