@@ -15,12 +15,14 @@
 
 #### Tested On
 * Lumen
+* Laravel
 #### Instalation
 
 **Install using Composer**
 
 Run command <code>composer require btx/btx</code>, then <code>composer dump-autoload</code>
 
+For, customized configuration run command <code>php artisan vendor:publish </code> and select index one of Btx Service Provider.
 
 
 **Install Manual**
