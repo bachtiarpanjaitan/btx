@@ -35,16 +35,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Btx\\Query",
-                "Btx\\Http",
-                "Btx\\File",
-                "Btx\\Common"
+               
             ],
             "aliases": {
-                "BtxQuery": "Btx\\Query",
-                "BtxFile": "Btx\\File",
-                "BtxHttp": "Btx\\Http",
-                "BtxCommon": "Btx\\Common"
+                
             }
         }
     },
