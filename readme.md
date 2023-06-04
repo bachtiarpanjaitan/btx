@@ -58,7 +58,7 @@ Register Service Provider into List of Service Provider.
 
 _lumen_ bootstrap/app.php
 ```
-$app->register(Btx\Query\BtxQueryFilterServiceProvider::class);
+$app->register(Btx\Query\BtxQueryServiceProvider::class);
 $app->register(Btx\Common\BtxCommonServiceProvider::class);
 $app->register(Btx\File\BtxFileServiceProvider::class);
 $app->register(Btx\Http\BtxHttpServiceProvider::class);
@@ -68,7 +68,7 @@ _laravel_ config/app.php
 'providers' => [
     // Other Service Providers
  
-    Btx\Query\BtxQueryFilterServiceProvider::class,
+    Btx\Query\BtxQueryServiceProvider::class,
     Btx\Common\BtxCommonServiceProvider::class,
     Btx\File\BtxFileServiceProvider::class,
     Btx\Http\BtxHttpServiceProvider::class
