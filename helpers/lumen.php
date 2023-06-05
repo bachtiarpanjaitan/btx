@@ -53,3 +53,24 @@ if (!function_exists('public_path')) {
     }
 
 }
+
+if(!function_exists('cleanPath')){
+    function cleanPath($path){
+        return preg_replace("#(/)+#", "/",$path);
+    }
+}
+
+if(!function_exists('formatSizeUnits')){
+    function formatSizeUnits($bytes)
+    {
+        $units = ['B', 'KB', 'MB', 'GB', 'TB'];
+        $index = 0;
+
+        while ($bytes >= 1024 && $index < 4) {
+            $bytes /= 1024;
+            $index++;
+        }
+
+        return round($bytes, 2) . ' ' . $units[$index];
+    }
+}
