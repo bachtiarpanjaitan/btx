@@ -17,7 +17,7 @@ class Directory {
     protected array $_data = [];
     protected $_params = null;
     protected $_action = null;
-    protected string $_grammar = '';
+    protected array $_grammar = [];
     protected string $_basePath = '';
 
     public bool $withNavigation = false;
@@ -45,8 +45,11 @@ class Directory {
     public function get(){
         $files = scandir($this->_basePath);
         $data = collect($this->_format($files));
-        if($this->_grammar != ''){
-            return $data->{$this->_grammar}(...$this->_params);
+        if(count($this->_grammar) > 0){
+            foreach ($this->_grammar as $grammar) {
+                $data = $data->{$grammar['grammar']}(...$grammar['params']);
+            }
+            return $data;
         } else return $data;
         
     }
@@ -68,32 +71,50 @@ class Directory {
     }
 
     public function where(...$params){
-        $this->_params = $params;
-        $this->_grammar = __FUNCTION__;
+        array_push($this->_grammar,[
+            'params' => $params,
+            'grammar' => __FUNCTION__
+        ]);
         return $this;
     }
 
     public function whereIn(...$params){
-        $this->_params = $params;
-        $this->_grammar = __FUNCTION__;
+        array_push($this->_grammar,[
+            'params' => $params,
+            'grammar' => __FUNCTION__
+        ]);
+        return $this;
+    }
+
+    public function whereNotIn(...$params){
+        array_push($this->_grammar,[
+            'params' => $params,
+            'grammar' => __FUNCTION__
+        ]);
         return $this;
     }
 
     public function sortBy(...$params){
-        $this->_params = $params;
-        $this->_grammar = __FUNCTION__;
+        array_push($this->_grammar,[
+            'params' => $params,
+            'grammar' => __FUNCTION__
+        ]);
         return $this;
     }
 
     public function sortByDesc(...$params){
-        $this->_params = $params;
-        $this->_grammar = __FUNCTION__;
+        array_push($this->_grammar,[
+            'params' => $params,
+            'grammar' => __FUNCTION__
+        ]);
         return $this;
     }
 
     public function groupBy(...$params){
-        $this->_params = $params;
-        $this->_grammar = __FUNCTION__;
+        array_push($this->_grammar,[
+            'params' => $params,
+            'grammar' => __FUNCTION__
+        ]);
         return $this;
     }
 
@@ -137,9 +158,10 @@ class Directory {
                 'permission'    => (int) substr(decoct($permission),-3),
                 'path'          => $path,
                 'extension'     => strtolower($ext),
+                'size'          => $size,
+                'byte'          => filesize($realpath),
                 'created_at'    => $created,
-                'updated_at'    => $updated,
-                'size'          => $size
+                'updated_at'    => $updated
             ]));
         }
         return $results;
