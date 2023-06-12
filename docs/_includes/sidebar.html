@@ -1,0 +1,29 @@
+<nav>
+    <ul class="menu">
+      {% for nav in site.data.navigation %}
+        {% assign ch = nav.child %}
+        {% if ch.size > 0 %}
+          <li>
+            <a href="{{ nav.url}}">
+              {{ nav.name }}
+            </a>
+          </li>
+          <ul>
+            {% for c in ch %}
+              <li>
+                <a href="{{ c.url }}">
+                  {{ c.name }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <li>
+            <a href="{{ nav.url }}">
+              {{ nav.name }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+</nav>
