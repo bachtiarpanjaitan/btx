@@ -42,6 +42,10 @@ class Directory {
         }
     }
 
+    public function read($path){
+        return file_get_contents(cleanPath($this->_basePath.'/'.$path));
+    }
+
     public function get(){
         $files = scandir($this->_basePath);
         $data = collect($this->_format($files));
