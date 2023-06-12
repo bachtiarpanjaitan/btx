@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {% seo %}
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header {% unless site.description or site.github.project_tagline %} class="without-description" {% endunless %}>
+        <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        {% if site.description or site.github.project_tagline %}
+          <p style="text-align: center;">{{ site.description | default: site.github.project_tagline }}</p>
+        {% endif %}
+        <ul style="list-style: none;">
+        {% if site.show_downloads %}
+          <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
+          <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
+        {% endif %}
+          <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section class="row" style="height: 100%;">
+      <div class="col-4 sidebar">
+        {% include sidebar.html %}
+      </div>
+      <div class="col-8">
+        {{ content }}
+      </div>
+
+      </section>
+      <footer >
+        {% if site.github.is_project_page %}
+          <p style="text-align: center;">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>  
+        {% endif %} 
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  </body>
+</html>
+<style>
+/* The side navigation menu */
+body {
+  color: #fff;
+}
+header {
+  /* background: #1A1A1A ; */
+  
+}
+
+header h1 {
+  color: #FB8C00;
+  text-align: center;
+}
+
+header ul {
+  /* background: #1A1A1A; */
+  /* text-align: center; */
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 10%;
+  height: 100%;
+  /* position: fixed; */
+  overflow:visible;
+  font-size: smaller;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color:#FB8C00;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 20%;
+  padding: 1px 16px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.col-2 {
+  flex: 2;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-3 {
+  flex: 3;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-4 {
+  flex: 4;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-8 {
+  flex: 8;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-9 {
+  flex: 9;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+</style>

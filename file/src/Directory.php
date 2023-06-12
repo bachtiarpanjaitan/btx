@@ -42,6 +42,10 @@ class Directory {
         }
     }
 
+    public function read($path){
+        return file_get_contents(cleanPath($this->_basePath.'/'.$path));
+    }
+
     public function get(){
         $files = scandir($this->_basePath);
         $data = collect($this->_format($files));
@@ -140,6 +144,7 @@ class Directory {
             $realpath = $this->_basePath.'/'.$file;
             if(!$this->withNavigation) if ($file === '.' || $file === '..') continue;
             $permission = fileperms($realpath);
+            $formattedPermission = sprintf('%04o', $permission & 0777);
             $created = date('Y-m-d H:i:s', filectime($realpath));
             $updated = date('Y-m-d H:i:s', filemtime($realpath));
             $path = $this->_path;
@@ -155,7 +160,7 @@ class Directory {
             array_push($results, collect([
                 'id'            => $i,
                 'name'          => $file,
-                'permission'    => (int) substr(decoct($permission),-3),
+                'permission'    => $formattedPermission,
                 'path'          => $path,
                 'extension'     => strtolower($ext),
                 'size'          => $size,

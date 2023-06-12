@@ -1,0 +1,27 @@
+- name: 'INSTALATION'
+  url: 'https://bachtiarpanjaitan.github.io/btx-docs'
+- name: 'COMMON'
+  url: '#'
+  child:
+    - name: 'Available Methods'
+      url: 'https://bachtiarpanjaitan.github.io/btx-docs/common/available-methods'
+- name: 'QUERY'
+  url: '#'
+  child:
+    - name: 'Request Query'
+      url: 'https://bachtiarpanjaitan.github.io/btx-docs/query/request-query'
+- name: 'HTTP'
+  url: '#'
+  child:
+    - name: 'Using Class Response'
+      url: 'https://bachtiarpanjaitan.github.io/btx-docs/http/using-class-response'
+    - name: 'Using Trait'
+      url: 'https://bachtiarpanjaitan.github.io/btx-docs/http/using-trait'
+- name: 'FILE'
+  url: '#'
+  child:
+    - name: 'Directory'
+      url: 'https://bachtiarpanjaitan.github.io/btx-docs/file/directory'
+    - name: 'Upload'
+      url: 'https://bachtiarpanjaitan.github.io/btx-docs/file/upload'
+      
