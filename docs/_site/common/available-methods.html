@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>btx/btx | Btx Documentations</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="btx/btx" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Btx Documentations" />
+<meta property="og:description" content="Btx Documentations" />
+<link rel="canonical" href="http://localhost:4000/common/available-methods.html" />
+<meta property="og:url" content="http://localhost:4000/common/available-methods.html" />
+<meta property="og:site_name" content="btx/btx" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="btx/btx" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Btx Documentations","headline":"btx/btx","url":"http://localhost:4000/common/available-methods.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=080bf26fb59421be1abe3ff97c0927f6c288588d">
+    <script src="/assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup theme-color -->
+<!-- start theme color meta headers -->
+<!-- <meta name="theme-color" content="#151515"> -->
+<!-- <meta name="msapplication-navbutton-color" content="#151515"> -->
+<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+<!-- end theme color meta headers -->
+
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header >
+        <h1>btx/btx</h1>
+        
+          <p style="text-align: center;">Btx Documentations</p>
+        
+        <ul style="list-style: none;">
+        
+          <li><a href="https://github.com/bachtiarpanjaitan/btx-docs">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section class="row" style="height: 100%;">
+      <div class="col-4 sidebar">
+        <nav>
+    <ul class="menu">
+      
+        
+        
+          <li>
+            <a href="https://bachtiarpanjaitan.github.io/btx-docs">
+              INSTALATION
+            </a>
+          </li>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              COMMON
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/common/available-methods">
+                  Available Methods
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              QUERY
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/query/request-query">
+                  Request Query
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              HTTP
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/http/using-class-response">
+                  Using Class Response
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/http/using-trait">
+                  Using Trait
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              FILE
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/file/directory">
+                  Directory
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/file/upload">
+                  Upload
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+    </ul>
+</nav>
+      </div>
+      <div class="col-8">
+        <h4 id="available-methods">Available Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>generate(number, language)</td>
+<td>SpellNumber</td>
+<td>Spelling number into another language. Available language: id (Indonesian: default),en (English)</td>
+</tr>
+<tr>
+<td>onCoordinateRadius(needle, haystack)</td>
+<td>Map</td>
+<td>To determine the coordinates are within a predetermined radius in meter using <strong>Haversine formula</strong></td>
+</tr>
+</tbody>
+</table>
+<h5 id="example">Example</h5>
+<h6 id="spellnumbergenerate">SpellNumber::generate()</h6>
+<p>Spelling number 225000</p>
+<pre><code>use Btx\Common\SpellNumber;
+use Btx\Http\Response;
+
+class UserController {
+
+    /** function to spelling a number */
+    ...
+        $number = 225000;
+        $spell = SpellNumber::generate($number);
+        //$spell must be : &quot;Dua Ratus Dua Puluh Lima Ribu&quot;
+        Response::ok('Uploaded',$spell)
+    ...
+}
+
+</code></pre>
+<h6 id="mapincoordinateradius">Map::inCoordinateRadius()</h6>
+<p>If you want to search <code>-6.248390079516094, 106.78650109830369</code> is in radius <code>-6.248269838250153, 106.7853721399023</code> with distance 50 meter.</p>
+<pre><code>use Btx\Common\Map;
+use Btx\Http\Response;
+
+class UserController {
+
+    /** function to coordinate is in radius */
+    ...
+        $centerPoint = [-6.248269838250153, 106.7853721399023];
+        $point = [
+          'radius' =&gt; 50, 
+          'lat' =&gt; -6.248390079516094, 
+          'lng' =&gt; 106.78650109830369
+        ];
+        $inRadius = Map::inCoordinateRadius($centerPoint,$point);
+        Response::ok('Is on Radius Center Point?.',$onRadius)
+    ...
+}
+
+</code></pre>
+      </div>
+
+      </section>
+      <footer >
+        
+          <p style="text-align: center;">Project maintained by <a href="https://github.com/bachtiarpanjaitan">bachtiarpanjaitan</a></p>  
+         
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  </body>
+</html>
+<style>
+/* The side navigation menu */
+body {
+  color: #fff;
+}
+header {
+  /* background: #1A1A1A ; */
+  
+}
+
+header h1 {
+  color: #FB8C00;
+  text-align: center;
+}
+
+header ul {
+  /* background: #1A1A1A; */
+  /* text-align: center; */
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 10%;
+  height: 100%;
+  /* position: fixed; */
+  overflow:visible;
+  font-size: smaller;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color:#FB8C00;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 20%;
+  padding: 1px 16px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.col-2 {
+  flex: 2;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-3 {
+  flex: 3;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-4 {
+  flex: 4;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-8 {
+  flex: 8;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-9 {
+  flex: 9;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+</style>

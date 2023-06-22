@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Btx/Query | btx/btx</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Btx/Query" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Btx Documentations" />
+<meta property="og:description" content="Btx Documentations" />
+<link rel="canonical" href="http://localhost:4000/query/request-query.html" />
+<meta property="og:url" content="http://localhost:4000/query/request-query.html" />
+<meta property="og:site_name" content="btx/btx" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Btx/Query" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Btx Documentations","headline":"Btx/Query","url":"http://localhost:4000/query/request-query.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=080bf26fb59421be1abe3ff97c0927f6c288588d">
+    <script src="/assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup theme-color -->
+<!-- start theme color meta headers -->
+<!-- <meta name="theme-color" content="#151515"> -->
+<!-- <meta name="msapplication-navbutton-color" content="#151515"> -->
+<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+<!-- end theme color meta headers -->
+
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header >
+        <h1>btx/btx</h1>
+        
+          <p style="text-align: center;">Btx Documentations</p>
+        
+        <ul style="list-style: none;">
+        
+          <li><a href="https://github.com/bachtiarpanjaitan/btx-docs">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section class="row" style="height: 100%;">
+      <div class="col-4 sidebar">
+        <nav>
+    <ul class="menu">
+      
+        
+        
+          <li>
+            <a href="https://bachtiarpanjaitan.github.io/btx-docs">
+              INSTALATION
+            </a>
+          </li>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              COMMON
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/common/available-methods">
+                  Available Methods
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              QUERY
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/query/request-query">
+                  Request Query
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              HTTP
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/http/using-class-response">
+                  Using Class Response
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/http/using-trait">
+                  Using Trait
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              FILE
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/file/directory">
+                  Directory
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/file/upload">
+                  Upload
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+    </ul>
+</nav>
+      </div>
+      <div class="col-8">
+        <h3 id="btxquery">Btx/Query</h3>
+<p>Now API parameters can be used with the REST API to filter, sort, paginate results, select fields and filtering relation up to 3 deep relationships. Additionally, specific parameters related to optional features can be used.</p>
+<blockquote>
+<p>NOTE: Only work with SQL database like MySQL, SQLServer, PostgreSQL, SQLite, MariaDB</p>
+</blockquote>
+<h4 id="support-query-filter">Support Query Filter</h4>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Required</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_limit</td>
+<td>required</td>
+<td>limit data result</td>
+<td>_limit: 10</td>
+</tr>
+<tr>
+<td>_page</td>
+<td>required</td>
+<td>retrieve data page-n</td>
+<td>_page: 1</td>
+</tr>
+<tr>
+<td>_sort:[column]:[sort type]</td>
+<td>optional</td>
+<td>sorting data by column</td>
+<td>_sort: id:desc or _sort: id:asc</td>
+</tr>
+<tr>
+<td>[column]_is</td>
+<td>optional</td>
+<td>get data where column value is [value]</td>
+<td>id_is: 5</td>
+</tr>
+<tr>
+<td>[column]_contain</td>
+<td>optional</td>
+<td>get data where column value contain [value]</td>
+<td>username_contain: admin</td>
+</tr>
+<tr>
+<td>[column]_gte</td>
+<td>optional</td>
+<td>get data where column value greater than or equal with [value]</td>
+<td>age_gte: 25</td>
+</tr>
+<tr>
+<td>[column]_lte</td>
+<td>optional</td>
+<td>get data where column value less than or equal with [value]</td>
+<td>age_lte: 25</td>
+</tr>
+<tr>
+<td>[column]_gt</td>
+<td>optional</td>
+<td>get data where column value greater than [value]</td>
+<td>age_gt: 25</td>
+</tr>
+<tr>
+<td>[column]_lt</td>
+<td>optional</td>
+<td>get data where column value less than [value]</td>
+<td>age_lt: 25</td>
+</tr>
+<tr>
+<td>[column]_ne</td>
+<td>optional</td>
+<td>get data where column value not equal with [value]</td>
+<td>gender_ne: male</td>
+</tr>
+<tr>
+<td>[column]_between</td>
+<td>optional</td>
+<td>get data where column value between [values]</td>
+<td>age_between: 20,30</td>
+</tr>
+<tr>
+<td>[column]_null</td>
+<td>optional</td>
+<td>get data where column is null</td>
+<td>address_null</td>
+</tr>
+<tr>
+<td>[column]_notnull</td>
+<td>optional</td>
+<td>get data where column is not null</td>
+<td>address_notnull</td>
+</tr>
+<tr>
+<td>[column]_in</td>
+<td>optional</td>
+<td>get data where column value in [values]</td>
+<td>age_in: 10,25,30</td>
+</tr>
+<tr>
+<td>[column]_notin</td>
+<td>optional</td>
+<td>get data where column value not in [values]</td>
+<td>age_notin: 10,25,30</td>
+</tr>
+</tbody>
+</table>
+<h4 id="query-filter-in-relationship-database">Query Filter in Relationship Database</h4>
+<p>Even query can filter data in relationship table up to 3 deep table relationship. Example 2 deep relationship data</p>
+<pre><code class="language-mermaid">graph LR
+A[User] -- user has one department --&gt; B[Department]
+B[Department] -- department has many division --&gt; C[Division]
+</code></pre>
+<p>and your user model and department model must be:</p>
+<pre><code>//user model
+class User extends Model
+{
+   ...
+   public function department(){
+      return $this-&gt;hasOne(Department::class,'id');
+   }
+   ...
+}
+
+//Department model
+class Department extends Model
+{
+   ...
+   public function division(){
+      return $this-&gt;hasMany(Division::class);
+   }
+   ...
+}
+</code></pre>
+<p>so, to filter data using department name or division name from user list you can using parameter with <em>__</em> (double underscore) like:</p>
+<table>
+<thead>
+<tr>
+<th>Param Key</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>department__name_is</td>
+<td>filter user using department name where department name is [value]</td>
+<td>department__name_is:production</td>
+</tr>
+<tr>
+<td>department__division__name_is</td>
+<td>filter user using division name where division name is [value]</td>
+<td>department__division__name_is: it</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-using-trait">Example using trait</h4>
+<ul>
+<li>Import Trait From Btx Package in your controller with <code>use Btx\Query\Traits\QueryFilter;</code></li>
+<li>Implement the trait <code>use QueryFilter</code></li>
+<li>Before query executing use function on trait <code>$this-&gt;filter(Model)</code></li>
+</ul>
+<p>Example:</p>
+<pre><code>use Btx\Query\Traits\QueryFilter; 
+class UserController extends Controller(){
+   use QueryFilter;
+
+   public function getUsers(Request $request){
+        $users = User::with('department');
+        $this-&gt;filter($users);
+        $users-&gt;get();
+
+        return response()-&gt;json(['data' =&gt; $users]);
+   }
+   
+}
+
+</code></pre>
+<h4 id="example-using-extending-model-class">Example using extending model class</h4>
+<ul>
+<li>Import Btx\Query\Model From Btx Package in your model with override existing Model class</li>
+<li>Before query executing use function <code>filter()</code></li>
+</ul>
+<p>Example:</p>
+<pre><code>//Model
+use Btx\Query\Model;
+class User extends Model
+{
+  public function department(){
+    return $this-&gt;hasOne(Department::class,'id','department_id');
+  }
+  ...
+}
+
+//Controller
+class UserController extends Controller(){
+
+   public function getUsers(Request $request){
+        //implement filter function
+        $users = User::with('department')-&gt;filter()-&gt;get();
+        return response()-&gt;json(['data' =&gt; $users]);
+   }
+   
+}
+
+</code></pre>
+      </div>
+
+      </section>
+      <footer >
+        
+          <p style="text-align: center;">Project maintained by <a href="https://github.com/bachtiarpanjaitan">bachtiarpanjaitan</a></p>  
+         
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  </body>
+</html>
+<style>
+/* The side navigation menu */
+body {
+  color: #fff;
+}
+header {
+  /* background: #1A1A1A ; */
+  
+}
+
+header h1 {
+  color: #FB8C00;
+  text-align: center;
+}
+
+header ul {
+  /* background: #1A1A1A; */
+  /* text-align: center; */
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 10%;
+  height: 100%;
+  /* position: fixed; */
+  overflow:visible;
+  font-size: smaller;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color:#FB8C00;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 20%;
+  padding: 1px 16px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.col-2 {
+  flex: 2;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-3 {
+  flex: 3;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-4 {
+  flex: 4;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-8 {
+  flex: 8;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-9 {
+  flex: 9;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+</style>
