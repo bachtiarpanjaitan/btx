@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Directory Management | btx/btx</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Directory Management" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Btx Documentations" />
+<meta property="og:description" content="Btx Documentations" />
+<link rel="canonical" href="http://localhost:4000/file/directory.html" />
+<meta property="og:url" content="http://localhost:4000/file/directory.html" />
+<meta property="og:site_name" content="btx/btx" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Directory Management" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Btx Documentations","headline":"Directory Management","url":"http://localhost:4000/file/directory.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=080bf26fb59421be1abe3ff97c0927f6c288588d">
+    <script src="/assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup theme-color -->
+<!-- start theme color meta headers -->
+<!-- <meta name="theme-color" content="#151515"> -->
+<!-- <meta name="msapplication-navbutton-color" content="#151515"> -->
+<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+<!-- end theme color meta headers -->
+
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header >
+        <h1>btx/btx</h1>
+        
+          <p style="text-align: center;">Btx Documentations</p>
+        
+        <ul style="list-style: none;">
+        
+          <li><a href="https://github.com/bachtiarpanjaitan/btx-docs">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section class="row" style="height: 100%;">
+      <div class="col-4 sidebar">
+        <nav>
+    <ul class="menu">
+      
+        
+        
+          <li>
+            <a href="https://bachtiarpanjaitan.github.io/btx-docs">
+              INSTALATION
+            </a>
+          </li>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              COMMON
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/common/available-methods">
+                  Available Methods
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              QUERY
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/query/request-query">
+                  Request Query
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              HTTP
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/http/using-class-response">
+                  Using Class Response
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/http/using-trait">
+                  Using Trait
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+        
+        
+          <li>
+            <a href="#">
+              FILE
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/file/directory">
+                  Directory
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://bachtiarpanjaitan.github.io/btx-docs/file/upload">
+                  Upload
+                </a>
+              </li>
+            
+          </ul>
+        
+      
+    </ul>
+</nav>
+      </div>
+      <div class="col-8">
+        <h2 id="directory-management">Directory Management</h2>
+<p>The fastest way to manage and view your directory. Directory class was support with some Laravel Collection methods.</p>
+<h4 id="laravel-collection-methods-available-in-directory">Laravel Collection methods available in Directory</h4>
+<ul>
+<li><a href="https://laravel.com/docs/7.x/collections#method-first">first</a></li>
+<li><a href="https://laravel.com/docs/7.x/collections#method-last">last</a></li>
+<li><a href="https://laravel.com/docs/7.x/collections#method-count">count</a></li>
+<li><a href="https://laravel.com/docs/7.x/collections#method-toarray">toArray</a></li>
+<li><a href="https://laravel.com/docs/7.x/collections#method-where">where</a></li>
+<li><a href="https://laravel.com/docs/7.x/collections#method-wherein">whereIn</a></li>
+<li><a href="https://laravel.com/docs/7.x/collections#method-wherenotin">whereNotIn</a></li>
+<li><a href="https://laravel.com/docs/7.x/collections#method-sortby">sortBy</a></li>
+<li><a href="https://laravel.com/docs/7.x/collections#method-sortbydesc">sortByDesc</a></li>
+<li><a href="https://laravel.com/docs/7.x/collections#method-groupby">groupBy</a></li>
+</ul>
+<h4 id="available-attributes-directory">Available Attributes Directory</h4>
+<ul>
+<li>withNavigation (default <code>false</code>) to show/hide navigation folder</li>
+</ul>
+<h4 id="available-methods-in-directory">Available methods in Directory</h4>
+<ul>
+<li><code>get()</code> : to retrieve list of file/folder on given path</li>
+<li><code>setBasePath()</code> : set path in Directory object</li>
+<li><code>createFolder()</code> : to create new folder in given path</li>
+</ul>
+<h4 id="result-attribute">Result Attribute</h4>
+<p>Result attribute must be array like:</p>
+<pre><code>[
+    &quot;id&quot;: &quot;increment index file/folder&quot;,
+    &quot;name&quot;: &quot;file/folder name&quot;,
+    &quot;permission&quot;: &quot;file/folder permission&quot;,
+    &quot;path&quot;: &quot;navigation path&quot;,
+    &quot;extension&quot;: &quot;file extension, .(dot) if it's folder&quot;,
+    &quot;size&quot;: &quot;size in string format&quot;,
+    &quot;byte&quot;: &quot;size in byte&quot;,
+    &quot;created_at&quot;: &quot;file/folder created timestamps&quot;,
+    &quot;updated_at&quot;: &quot;file/folder updated timestamps&quot;
+]
+
+</code></pre>
+<h4 id="example">Example</h4>
+<p>If you want to retrieve all file/folder in public directory.Import Directory Class in your working file with:</p>
+<p><code>use Btx\File\Directory;</code></p>
+<p>You can set default folder for scanning, available in <strong>btx.php</strong> in config folder your project with key <code>base_file_path</code>. If file doesn't exist, you can try to publish config using artisan command <code>php artisan vendor:publish</code> and select index one of Btx Provider or type <code>0</code> to publish all listed packages.</p>
+<pre><code>$dir = new Directory();
+$dir-&gt;withNavigation = true; //if you want to show navigation folder
+$files = $dir-&gt;scan('/public')-&gt;get();
+
+// if default path has set into /public
+$files = $dir-&gt;scan()-&gt;get();
+
+</code></pre>
+<p>If you want to use Laravel Collection</p>
+<pre><code>$dir = new Directory();
+$dir-&gt;withNavigation = false; //if you don't want to show navigation folder
+
+// get files in public where extension is pdf
+$files = $dir-&gt;scan('/public')-&gt;where('extension','pdf')-&gt;get();
+
+// get first file from public folder where extension is pdf
+$files = $dir-&gt;scan('/public')-&gt;where('extension','pdf')-&gt;first();
+
+// count all file/folder in public folder
+$files = $dir-&gt;scan('/public')-&gt;count();
+
+// if you want count folder only
+$files = $dir-&gt;scan('/public')-&gt;where('extension','.')-&gt;count();
+
+</code></pre>
+      </div>
+
+      </section>
+      <footer >
+        
+          <p style="text-align: center;">Project maintained by <a href="https://github.com/bachtiarpanjaitan">bachtiarpanjaitan</a></p>  
+         
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  </body>
+</html>
+<style>
+/* The side navigation menu */
+body {
+  color: #fff;
+}
+header {
+  /* background: #1A1A1A ; */
+  
+}
+
+header h1 {
+  color: #FB8C00;
+  text-align: center;
+}
+
+header ul {
+  /* background: #1A1A1A; */
+  /* text-align: center; */
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 10%;
+  height: 100%;
+  /* position: fixed; */
+  overflow:visible;
+  font-size: smaller;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color:#FB8C00;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 20%;
+  padding: 1px 16px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.col-2 {
+  flex: 2;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-3 {
+  flex: 3;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-4 {
+  flex: 4;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-8 {
+  flex: 8;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-9 {
+  flex: 9;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+</style>
