@@ -81,5 +81,3 @@ _laravel_ config/app.php
 ```
 then, dump autoload using command <code>composer dump-autoload</code>.
 
-See detail documentations on [Wiki](https://github.com/bachtiarpanjaitan/btx-docs)
-
