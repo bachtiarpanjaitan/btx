@@ -1,5 +1,5 @@
 ## BTX
-<p align="center"><a href="https://basapadi.com/projects/btx-btx" target="_blank"><img src="https://bataxdev.basapadi.com/uploads/btx_packagist_18b5e6f8b1.png?updated_at=2023-06-08T12:37:58.823Z" width="400" alt="Btx Packagist Logo"></a></p>
+<p align="center"><a href="https://bataxdev.com/projects/btx-btx" target="_blank"><img src="https://bataxdev.com/assets/images/btx-packagist.png" width="400" alt="Btx Packagist Logo"></a></p>
 
 <p align="center">
     <a href="https://packagist.org/packages/btx/btx?"><img src="https://img.shields.io/packagist/dt/btx/btx?style=flat-square" alt="Total Downloads"></a>
