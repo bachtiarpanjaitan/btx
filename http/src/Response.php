@@ -10,11 +10,11 @@ class Response {
         return self::response200($text,$data,$append);
     }
 
-    public static function badRequest($text,$dir = null){
+    public static function badRequest($text,$dir = ''){
         return self::response400($text,$dir);
     }
 
-    public static function movedPermanently($text,$dir = null){
+    public static function movedPermanently($text,$dir = ''){
         return self::response301($text,$dir);
     }
 
@@ -22,11 +22,11 @@ class Response {
         return self::response401();
     }
 
-    public static function notFound($text,$dir = null){
+    public static function notFound($text,$dir = ''){
         return self::response404($text,$dir);
     }
 
-    public static function notAllowed($text,$dir = null){
+    public static function notAllowed($text,$dir = ''){
         return self::response405($text,$dir);
     }
 
