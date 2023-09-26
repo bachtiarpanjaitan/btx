@@ -82,12 +82,16 @@ trait QueryFilter {
     private function _generateQuery(&$model, $params){
         $tables = $params['table'];
         if(count($tables) > 0) {
-            $model->whereHas($tables[0], function($query) use ($params) {
+            $model->whereHas($tables[0], function($query) use ($params, $tables) {
                 if(isset($tables[1])){
-                    $query->whereHas($tables[1], function($query) use ($params) {
+                    $query->whereHas($tables[1], function($query) use ($params, $tables) {
                         if(isset($tables[2])){
-                            $query->whereHas($tables[2], function($query) use ($params) {
-                                $this->_generator($query,$params);
+                            $query->whereHas($tables[2], function($query) use ($params, $tables) {
+                                if(isset($tables[3])){
+                                    $query->whereHas($tables[3], function($query) use ($params) {
+                                        $this->_generator($query,$params);
+                                    });
+                                } else $this->_generator($query,$params);
                             });
                         } else $this->_generator($query,$params);
                     });
