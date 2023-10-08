@@ -14,16 +14,16 @@ if (!function_exists('config_path')) {
 
 }
 
-if (!function_exists('urlGenerator')) {
+// if (!function_exists('urlGenerator')) {
 
-    /**
-     * @return \Laravel\Lumen\Routing\UrlGenerator
-     */
-    function urlGenerator() {
-        return new \Laravel\Lumen\Routing\UrlGenerator(app());
-    }
+//     /**
+//      * @return \Laravel\Lumen\Routing\UrlGenerator
+//      */
+//     function urlGenerator() {
+//         return new \Laravel\Lumen\Routing\UrlGenerator(app());
+//     }
 
-}
+// }
 
 if (!function_exists('asset')) {
 
