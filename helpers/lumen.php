@@ -25,19 +25,19 @@ if (!function_exists('config_path')) {
 
 // }
 
-if (!function_exists('asset')) {
+// if (!function_exists('asset')) {
 
-    /**
-     * @param $path
-     * @param bool $secured
-     *
-     * @return string
-     */
-    function asset($path, $secured = false) {
-        return urlGenerator()->asset($path, $secured);
-    }
+//     /**
+//      * @param $path
+//      * @param bool $secured
+//      *
+//      * @return string
+//      */
+//     function asset($path, $secured = false) {
+//         return urlGenerator()->asset($path, $secured);
+//     }
 
-}
+// }
 
 if (!function_exists('public_path')) {
 
