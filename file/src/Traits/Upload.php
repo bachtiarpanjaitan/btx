@@ -22,7 +22,7 @@ trait Upload {
      *  - rules: string - Laravel validation format
      * @return array Image Attributes
      */
-    public function uploadImage(Request $req,array $options){
+    public static function uploadImage(Request $req,array $options){
         try {
             $imageProp = [];
             $_imageValidationRules = isset($options['rules'])? $options['rules']:'image|mimes:jpg,png,jpeg,svg|max:1024';
@@ -67,7 +67,7 @@ trait Upload {
      *  - permission: string - set permission folder of destination path, default: 777,
      * @return array Image Attributes
      */
-    public function uploadFile(Request $request, array $options){
+    public static function uploadFile(Request $request, array $options){
         try {
             $fileProp = [];
             $path = $options['path'];
