@@ -3,7 +3,7 @@ title: Batax Developer
 layout: default
 ---
 
-<p align="center"><a href="https://bataxdev.com/projects/btx-btx" target="_blank"><img src="https://bataxdev.com/assets/images/btx-packagist.png" width="400" alt="Btx Packagist Logo"></a></p>
+<p align="center"><a href="https://bataxdev.com/projects/btx-btx" target="_blank"><img src="https://bataxdev.basapadi.com/assets/images/btx-packagist.png" width="400" alt="Btx Packagist Logo"></a></p>
 
 <p align="center">
     <a href="https://packagist.org/packages/btx/btx?"><img src="https://img.shields.io/packagist/dt/btx/btx?style=flat-square" alt="Total Downloads"></a>
