@@ -13,7 +13,7 @@ class Operator {
             'q' => 'where'
         ],
         'contain' => [
-            's' => 'LIKE',
+            's' => 'ILIKE',
             'q' => 'where',
             'a' => '%'
         ],
