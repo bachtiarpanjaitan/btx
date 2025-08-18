@@ -6,8 +6,8 @@
     "require": {
         "php": ">= 8.0",
         "intervention/image": "^2.7",
-        "league/fractal": "^0.19.2",
-        "spatie/laravel-fractal": "^6.0"
+        "spatie/laravel-fractal": "^6.3",
+        "league/fractal": "^0.20.2"
     },
     "license": "MIT",
     "autoload": {
