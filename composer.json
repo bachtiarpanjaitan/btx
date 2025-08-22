@@ -1,5 +1,5 @@
 {
-    "name": "btx/btx-dev",
+    "name": "btx/btx",
     "description": "General additional package for laravel framework",
     "version": "2.0.3",
     "type": "library",
