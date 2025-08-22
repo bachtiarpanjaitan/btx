@@ -21,7 +21,9 @@ class ColumnTransformer extends TransformerAbstract {
             'sortable' => true,
             'type' => $type,
             'options' => isset($resp['options']) ? $resp['options'] : [],
-            'show' => $show
+            'show' => $show,
+            'class' => $resp['class'] ?? '',
+            'styles' => $resp['styles'] ?? ''
         ];
     }
 }
