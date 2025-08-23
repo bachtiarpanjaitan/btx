@@ -9,9 +9,11 @@ class ColumnTransformer extends TransformerAbstract {
         $align = 'left';
         $type = 'text';
         $show = true;
+        $optionFilter = false;
         if(isset($resp['align'])) $align = $resp['align'];
         if(isset($resp['type'])) $type = $resp['type'];
         if(isset($resp['show'])) $show = $resp['show'];
+        if(isset($resp['option_filter'])) $optionFilter = $resp['option_filter'];
         return [
             'name' => $resp['value'],
             'required' => true,
@@ -23,7 +25,8 @@ class ColumnTransformer extends TransformerAbstract {
             'options' => isset($resp['options']) ? $resp['options'] : [],
             'show' => $show,
             'class' => $resp['class'] ?? '',
-            'styles' => $resp['styles'] ?? ''
+            'styles' => $resp['styles'] ?? '',
+            'option_filter' => $optionFilter
         ];
     }
 }

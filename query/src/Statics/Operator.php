@@ -54,4 +54,51 @@ class Operator {
         ]
         
     ];
+
+    static $OPERATOR_SQLITE = [
+        'is' => [
+            'q' => 'where'
+        ],
+        'contain' => [
+            's' => 'LIKE',
+            'q' => 'where',
+            'a' => '%'
+        ],
+        'gte' => [
+            's' => '>=',
+            'q' => 'where'
+        ],
+        'lte' => [
+            's' => '<=',
+            'q' => 'where'
+        ],
+        'gt' => [
+            's' => '>',
+            'q' => 'where'
+        ],
+        'lt' => [
+            's' => '<',
+            'q' => 'where'
+        ],
+        'ne' => [
+            's' => '<>',
+            'q' => 'where'
+        ],
+        'between' => [
+            'q' => 'whereBetween'
+        ],
+        'null' => [
+            'q' => 'whereNull'
+        ],
+        'notnull' => [
+            'q' => 'whereNotNull'
+        ],
+        'in' => [
+            'q' => 'whereIn'
+        ],
+        'notin' => [
+            'q' => 'whereNotIn'
+        ]
+        
+    ];
 }
