@@ -28,6 +28,8 @@ trait QueryFilter {
         $this->_init();
         $page = 1;
         $limit = $this->_request['_limit'];
+        $operators= Operator::$OPERATOR;
+        if($this->_config['database'] == 'sqlite') $operators= Operator::$OPERATOR_SQLITE;
         foreach($this->_request as $key => $value){
             $relation = explode('__', $key);
             $table = [];
@@ -42,7 +44,7 @@ trait QueryFilter {
             $_filter_name = $_filter[count($_filter)-1];
             unset($_filter[count($_filter)-1]);
             $column = implode("_",$_filter);
-            $operators= Operator::$OPERATOR;
+            
             if(isset($operators[$_filter_name])){
                 $params = [
                     'table' => $table,
