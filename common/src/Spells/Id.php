@@ -27,13 +27,13 @@ class Id {
 			return ($this->convert($value / 10) . " puluh") .  $this->convert($value % 10); 
 		}
 		else if($value < 200 ){ 
-			return "Seratus" . $this->convert($value - 100);
+			return " seratus" . $this->convert($value - 100);
 		}
 		else if($value < 1000){
 			return ($this->convert($value / 100) . " ratus" ) . $this->convert($value % 100);
 		}
 		else if($value < 2000){
-			return "Seribu" . $this->convert($value - 1000);
+			return " seribu" . $this->convert($value - 1000);
 		}
 		else if($value < 1000000){
 			return ($this->convert($value /1000) . " ribu") . $this->convert($value % 1000);
