@@ -3,12 +3,19 @@
     "description": "General additional package for laravel framework",
     "version": "2.0.5",
     "type": "library",
-    "keywords": ["bataxdev", "btx","bachtiarpanjaitan","spellnumber"],
+    "keywords": [
+        "bataxdev",
+        "btx",
+        "bachtiarpanjaitan",
+        "spellnumber"
+    ],
     "require": {
         "php": ">= 8.0",
         "intervention/image": "^2.7",
         "spatie/laravel-fractal": "^6.3",
-        "league/fractal": "^0.20.2"
+        "league/fractal": "^0.20.2",
+        "openai-php/client": "*",
+        "symfony/http-client": "^8.0"
     },
     "license": "MIT",
     "autoload": {
@@ -35,14 +42,15 @@
     ],
     "extra": {
         "laravel": {
-            "providers": [
-               
-            ],
-            "aliases": {
-                
-            }
+            "providers": [],
+            "aliases": {}
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
 }
